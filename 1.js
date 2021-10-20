@@ -2,7 +2,7 @@ const gek = {name: 'sunghoon',age: 16, gender: 'male'};
 let Null = null;//null과 undefined 의 형식은 objects
 let nam = 'aaaa';
 const num = 0.2;
-f
+
 // const a = false;//const는 못바꿈
 //데이터 형식은 let 과 const ,형식 지정은 따로 필요 없다
 

@@ -21,7 +21,7 @@ console.log(three);
 //22 비구조화 할당을 함수로 하기
 /*const func = function({a,b}){
     console.log(a);
-    console.log(b);ㅉ
+    console.log(b);
 };
 
 const obj = {a:1, b:2};
