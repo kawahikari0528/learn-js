@@ -55,6 +55,7 @@ console.log(result);
     },
 ];
 const who = arr.filter((e) => e.done === false);
+
 console.log(who);
 */
 
