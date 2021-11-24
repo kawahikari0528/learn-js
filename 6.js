@@ -38,10 +38,31 @@
 // console.log(global.foo);
 //global은 전역을 가리킴
 
-var abc = "This is the test";
-console.log(window.abc);
-const sayFoo = function(){
-    console.log(this.abc);
+// var abc = "This is the test";
+// console.log(window.abc);
+// const sayFoo = function(){
+//     console.log(this.abc);
+// }
+// sayFoo();
+// //전역함수에서는 this가 전역을 가리킴
+
+
+
+const value = 100;
+const myObject = {
+    value: 1,
+    func1: function(){//메서드
+        this.value +=1;
+        console.log('func() called, this. value : ' + this.value);
+        func2 = function(){//내부함수
+            this.value += 1;//전역에 있는 value
+            console.log('func2() called, this. value : ' + this.value);
+            func3 = function(){//내부함수
+                this.value += 1;// 전역에 있는 value
+                console.log('func3() called, this. value : ' + this.value);
+            }
+            func3();
+        }
+        fun2();
+    }
 }
-sayFoo();
-//전역함수에서는 this가 전역을 가리킴
