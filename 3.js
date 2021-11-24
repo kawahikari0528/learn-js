@@ -1,3 +1,111 @@
+// function solution(progresses, speeds) {
+//     var answer = [];
+//     let progressesstack = [], speedsstack =[];
+//     let out = 0, answercount =0;
+//     for(let i = progresses.length-1;i>=0;i++){
+//         progressesstack.push(progresses[i]);
+//         speedsstack.push(speeds[i]);
+//     }
+
+//     for(;progressesstack.length>0;){
+//         for(let i=0;i<progressesstack.length;i++){
+//             progressesstack[i] += speedsstack[i];
+//         }
+//         if(progressesstack[progressesstack.length-1]>=100){
+//             progressesstack.pop();
+
+//             out++;
+//             if(progressesstack.length ==0) {
+//                 answer[answercount++] = out;
+//                 break;
+
+
+//             }
+//             while(progressesstack[progressesstack.length-1]>=100){
+//                 progressesstack.pop();
+//                 out++;
+//                 if(progressesstack.length ==0) break;
+//             }
+//             answer[answercount++] = out;
+//         }
+
+//     }
+
+//     return answer;
+// }
+function solution(priorities, location) {
+    var answer = 0;
+    let temp = 0, save, length = priorities.length, finded = false;
+    let list = [];
+    for(let i=0; i<priorities.length;i++){
+        list[i] = i;
+    }
+
+    for(let count =0;priorities != 0;count++){
+
+        for(let i=1;i<priorities.length;i++){
+
+            if(priorities[0]<priorities[i]){
+                
+                finded = true;
+                list.push(list[0]);
+                list.splice(0,1);
+                priorities.push(priorities[0]);
+                priorities.splice(0,1);
+                console.log(list);
+                break;
+            }
+
+        }
+        if(!finded){
+            for(let i =0; i<list.length;i++){
+                if(list[i] == location) answer = i+1; 
+            }
+            if( priorities[0] == priorities[temp]) {
+                answer = temp+1;
+                priorities.shift();
+                break;
+            }
+            priorities.shift();
+
+        }
+        finded = false;
+    }
+
+    
+    return answer;
+}
+
+console.log(solution([2, 4, 8, 2, 9, 3, 3], 2));
+// function solution(progresses, speeds) {
+//     var answer = [];
+//     let out = 0,count =0, answercount =0;
+//     for(let i  =0; count != progresses.length ; i++){
+//         if(i>=progresses.length) i =0;
+//         progresses[i]  = progresses[i]+ speeds[i];
+//         console.log(progresses[i]);
+
+//     }
+
+//     return answer;
+// }
+//console.log(solution([93, 30, 55], [1, 30, 5]));
+
+// function solution(num) {
+//     while(num!= 1){
+//             if(num%2 ==0){
+//         num /=2;
+//     }
+//     else if(num%2 ==1){
+//         num *=3;
+//         num++;
+//     }
+//     }
+
+//     return num;
+// }
+
+// console.log(solution(6, [1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6]));
 
 //비구조화 할당(밖으로 꺼내옴)
 /*const obj = {
